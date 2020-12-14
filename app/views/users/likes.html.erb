@@ -2,6 +2,8 @@
   <%= render 'users/users_aside' %>
   <div class="col-sm-8">
     <%= render 'users/users_nav-tabs' %>
-    <%= render 'users/users', users: @followers %>
+    <% if @likes.any? %>
+      <%= render 'microposts/microposts', microposts: @likes %>
+    <% end %>
   </div>
 </div>
